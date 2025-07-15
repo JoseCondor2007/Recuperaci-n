@@ -1,0 +1,207 @@
+/* Base styles */
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #f7fafc; /* Color de fondo claro */
+}
+
+/* Encabezado */
+header {
+    background-color: #dc2626; /* Rojo de PlazaVea/Makro */
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Contenedor del menú de navegación */
+.header-nav ul {
+    display: flex;
+    gap: 1.5rem; /* space-x-6 en Tailwind */
+}
+
+.header-nav a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header-nav a:hover {
+    color: #fca5a5; /* Un rojo más claro para el hover */
+}
+
+/* Contenido principal */
+.main-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Estilo de los banners/sliders */
+.swiper-slide {
+    background-color: #1e3a8a; /* Azul oscuro */
+    position: relative;
+}
+
+.swiper-slide h2 {
+    font-size: 2.25rem; /* text-4xl en Tailwind */
+    font-weight: 800;
+    color: #fff;
+    background-color: #dc2626; /* Fondo rojo para el texto */
+    padding: 0.5rem 1rem;
+}
+
+/* Sección de categorías */
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.category-icon-bg {
+    width: 5rem;
+    height: 5rem;
+    background-color: #f3f4f6; /* gris claro */
+    border-radius: 9999px; /* rounded-full en Tailwind */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.category-icon {
+    font-size: 2.25rem;
+    color: #16a34a; /* verde */
+}
+
+/* Tarjetas de producto */
+.product-card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 1px solid #e5e7eb; /* Color de borde gris */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.product-badges {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.product-badge {
+    color: #fff;
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+}
+
+.badge-offer {
+    background-color: #dc2626; /* Rojo */
+}
+
+.badge-new {
+    background-color: #2563eb; /* Azul */
+}
+
+.product-details {
+    padding: 1rem;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-rating {
+    display: flex;
+    color: #fcd34d; /* Amarillo para estrellas */
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 1.25rem; /* text-xl */
+    color: #dc2626;
+    margin-bottom: 0.5rem;
+}
+
+.product-old-price {
+    color: #6b7280; /* Gris */
+    font-size: 0.875rem; /* text-sm */
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+}
+
+.add-to-cart-btn {
+    background-color: #22c55e; /* Verde */
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #16a34a; /* Verde más oscuro al pasar el ratón */
+}
+
+/* Formulario de registro */
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+    width: 100%;
+    border-color: #d1d5db; /* Gris de borde */
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+/* Página de éxito */
+.success-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.success-icon {
+    color: #16a34a; /* Verde */
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #16a34a;
+}

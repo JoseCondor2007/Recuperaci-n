@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Realizado - Supermercado Delicioso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enlace a tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Encabezado -->
+    <header class="bg-red-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                <h1 class="text-2xl font-bold">Supermercado Delicioso</h1>
+            </div>
+            <nav class="header-nav">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-red-200 font-medium">Inicio</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Productos</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Ofertas</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden success-card">
+            <!-- Encabezado de éxito -->
+            <div class="bg-green-600 text-white p-6 text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-green-700 rounded-full mb-4">
+                    <i class="fas fa-check text-2xl success-icon"></i>
+                </div>
+                <h1 class="text-2xl font-bold success-message">¡Pedido Realizado con Éxito!</h1>
+                <p class="mt-2">Tu pedido ha sido procesado correctamente.</p>
+            </div>
+            
+            <!-- Detalles del pedido -->
+            <div class="p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Detalles del Pedido</h2>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600 font-medium">Nombre Completo:</span>
+                        <span class="font-semibold">{{ pedido.nombre_completo }}</span>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <span class="text-gray-600 font-medium">Email:</span>
+                        <span class="font-semibold">{{ pedido.email }}</span>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <span class="text-gray-600 font-medium">Teléfono:</span>
+                        <span class="font-semibold">{{ pedido.telefono }}</span>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <span class="text-gray-600 font-medium">Dirección de Envío:</span>
+                        <span class="font-semibold">{{ pedido.direccion_envio }}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-start">
+                        <span class="text-gray-600 font-medium">Productos Solicitados:</span>
+                        <span class="font-semibold text-right">{{ pedido.productos_solicitados }}</span>
+                    </div>
+                    
+                    {% if pedido.notas_adicionales %}
+                    <div class="flex justify-between items-start">
+                        <span class="text-gray-600 font-medium">Notas Adicionales:</span>
+                        <span class="font-semibold text-right">{{ pedido.notas_adicionales }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Acciones -->
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/" 
+                       class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded transition duration-200 text-center">
+                        <i class="fas fa-plus-circle mr-2"></i>Realizar Otro Pedido
+                    </a>
+                    <a href="#" 
+                       class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition duration-200 text-center">
+                        <i class="fas fa-list-ul mr-2"></i>Ver Mis Pedidos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página (adaptado de index.html para consistencia) -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Supermercado Delicioso</h3>
+                    <p class="text-gray-400">La mejor calidad al mejor precio para tu hogar.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Ofertas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Av. Principal 123, Ciudad
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i> (123) 456-7890
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> info@supermercadodelicioso.com
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <h5 class="font-semibold mb-2">Descarga nuestra App</h5>
+                        <div class="flex space-x-2">
+                            <a href="#"
+                                class="bg-black text-white px-3 py-1 rounded text-sm flex items-center">
+                                <i class="fab fa-apple mr-1"></i> App Store
+                            </a>
+                            <a href="#"
+                                class="bg-black text-white px-3 py-1 rounded text-sm flex items-center">
+                                <i class="fab fa-google-play mr-1"></i> Play Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Supermercado Delicioso. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

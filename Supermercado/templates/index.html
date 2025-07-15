@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Delicioso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enlace a tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        /* Estilos específicos de Swiper que aún se pueden mantener aquí o mover a style.css */
+        .swiper {
+            width: 100%;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* La clase product-card:hover ya está definida en style.css, puedes eliminarla de aquí */
+        /* .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        } */
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Encabezado -->
+    <header class="bg-red-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                <h1 class="text-2xl font-bold">Supermercado Delicioso</h1>
+            </div>
+            <nav class="header-nav">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-red-200 font-medium">Inicio</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Productos</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Ofertas</a></li>
+                    <li><a href="#" class="hover:text-red-200 font-medium">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-red-200"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-red-200"><i class="fas fa-user"></i></a>
+                <a href="#" class="hover:text-red-200 relative">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Banners/Slider -->
+    <section class="swiper my-4">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Ofertas de la Semana -->
+            <div class="swiper-slide bg-blue-800 relative">
+                <!-- Reemplaza esta URL con la ruta a tu imagen de ofertas, por ejemplo: static/img/ofertas_semana.jpg -->
+                <img src="static\img\ofertas.jpg" alt="Ofertas de la semana" class="w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 flex items-center justify-center p-4">
+                    <h2 class="text-4xl font-extrabold text-white">
+                        <span class="bg-red-600 px-4 py-2 rounded">OFERTAS EXCLUSIVAS</span>
+                    </h2>
+                </div>
+            </div>
+            <!-- Slide 2: Frutas y Verduras Frescas -->
+            <div class="swiper-slide bg-blue-800 relative">
+                <!-- Reemplaza esta URL con la ruta a tu imagen de frutas y verduras, por ejemplo: static/img/frutas_verduras.jpg -->
+                <img src="static\img\frutas_frescas.jpg" alt="Frutas frescas" class="w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 flex items-center justify-center p-4">
+                    <h2 class="text-4xl font-extrabold text-white">
+                        <span class="bg-red-600 px-4 py-2 rounded">FRESCOS CADA DÍA</span>
+                    </h2>
+                </div>
+            </div>
+            <!-- Slide 3: Lácteos de Calidad -->
+            <div class="swiper-slide bg-blue-800 relative">
+                <!-- Reemplaza esta URL con la ruta a tu imagen de lácteos, por ejemplo: static/img/lacteos_calidad.jpg -->
+                <img src="static\img\lacteos_calidad.jpg" alt="Productos lácteos" class="w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 flex items-center justify-center p-4">
+                    <h2 class="text-4xl font-extrabold text-white">
+                        <span class="bg-red-600 px-4 py-2 rounded">LÁCTEOS PREMIUM</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-button-next text-white"></div>
+    </section>
+
+    <!-- Sección de Categorías -->
+    <section class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Nuestras Categorías</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="#" class="category-item">
+                <div class="category-icon-bg">
+                    <i class="fas fa-apple-alt category-icon text-green-600"></i>
+                </div>
+                <h3 class="font-semibold">Frutas y Verduras</h3>
+            </a>
+            <a href="#" class="category-item">
+                <div class="category-icon-bg">
+                    <i class="fas fa-wine-bottle category-icon text-blue-600"></i>
+                </div>
+                <h3 class="font-semibold">Bebidas</h3>
+            </a>
+            <a href="#" class="category-item">
+                <div class="category-icon-bg">
+                    <i class="fas fa-cheese category-icon text-yellow-500"></i>
+                </div>
+                <h3 class="font-semibold">Lácteos</h3>
+            </a>
+            <a href="#" class="category-item">
+                <div class="category-icon-bg">
+                    <i class="fas fa-drumstick-bite category-icon text-red-500"></i>
+                </div>
+                <h3 class="font-semibold">Carnes</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Productos Destacados -->
+    <section class="container mx-auto px-4 py-8 bg-gray-100 rounded-lg">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Productos Destacados</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Producto 1: Leche Entera -->
+            <div class="product-card">
+                <div class="relative">
+                    <!-- Reemplaza esta URL con la ruta a tu imagen de leche, por ejemplo: static/img/leche_entera_1l.png -->
+                    <img src="static\img\Leche_Entera_1L.jpg" alt="Leche" class="product-image">
+                    <span class="product-badge badge-offer">OFERTA</span>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Leche Entera 1L</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-600 text-sm ml-1">(24)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="product-price">$2.99</span>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-cart-plus mr-2"></i>Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2: Manzanas Red Delicious -->
+            <div class="product-card">
+                <div class="relative">
+                    <!-- Reemplaza esta URL con la ruta a tu imagen de manzanas, por ejemplo: static/img/manzanas_red_delicious.png -->
+                    <img src="static\img\Manzanas_Red_Delicious.jpg" alt="Manzanas" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Manzanas Red Delicious</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-1">(18)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="product-price">$3.49/kg</span>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-cart-plus mr-2"></i>Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 3: Queso Cheddar -->
+            <div class="product-card">
+                <div class="relative">
+                    <!-- Reemplaza esta URL con la ruta a tu imagen de queso, por ejemplo: static/img/queso_cheddar_250g.png -->
+                    <img src="static\img\Queso_Cheddar_250g.jpg" alt="Queso" class="product-image">
+                    <span class="product-badge badge-new">NUEVO</span>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Queso Cheddar 250g</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-1">(32)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="product-price">$4.75</span>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-cart-plus mr-2"></i>Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 4: Pan Integral -->
+            <div class="product-card">
+                <div class="relative">
+                    <!-- Reemplaza esta URL con la ruta a tu imagen de pan, por ejemplo: static/img/pan_integral_500g.png -->
+                    <img src="static\img\Pan_Integral_500g.jpg" alt="Pan" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Pan Integral 500g</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-1">(15)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="product-price">$1.99</span>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-cart-plus mr-2"></i>Añadir al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Realizar Pedido (Ahora en una tarjeta con color distinto) -->
+    <section class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Realizar Pedido</h2>
+        
+        <!-- Contenedor de la tarjeta del formulario -->
+        <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded">
+                <h3 class="font-bold text-lg mb-2">📌 Ejemplo de cómo llenar el formulario:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div><span class="font-semibold">Nombre Completo:</span> Juan Pérez</div>
+                    <div><span class="font-semibold">Email:</span> juan.perez@example.com</div>
+                    <div><span class="font-semibold">Teléfono:</span> +51 987 654 321</div>
+                    <div><span class="font-semibold">Dirección de Envío:</span> Av. Los Girasoles 456, Miraflores, Lima</div>
+                    <div><span class="font-semibold">Productos Solicitados:</span> 2x Leche Entera 1L, 1kg Manzanas Red Delicious</div>
+                    <div><span class="font-semibold">Notas Adicionales:</span> Entregar después de las 3 PM.</div>
+                </div>
+            </div>
+            
+            <form method="POST" action="/realizar_pedido" class="bg-white p-6 rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 mb-1 font-medium">Nombre Completo *</label>
+                        <input type="text" name="nombre_completo" required class="form-input border-black bg-gray-100">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-1 font-medium">Email *</label>
+                        <input type="email" name="email" required class="form-input border-black bg-gray-100">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-1 font-medium">Teléfono *</label>
+                        <input type="tel" name="telefono" required class="form-input border-black bg-gray-100">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-1 font-medium">Dirección de Envío *</label>
+                        <input type="text" name="direccion_envio" required class="form-input border-black bg-gray-100">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 mb-1 font-medium">Productos Solicitados *</label>
+                        <textarea name="productos_solicitados" rows="4" required class="form-input border-black bg-gray-100"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 mb-1 font-medium">Notas Adicionales</label>
+                        <textarea name="notas_adicionales" rows="3" class="form-input border-black bg-gray-100"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="mt-6 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded transition duration-200">
+                    Realizar Pedido
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Supermercado Delicioso</h3>
+                    <p class="text-gray-400">La mejor calidad al mejor precio para tu hogar.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Ofertas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Av. Principal 123, Ciudad
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i> (123) 456-7890
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> info@supermercadodelicioso.com
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <h5 class="font-semibold mb-2">Descarga nuestra App</h5>
+                        <div class="flex space-x-2">
+                            <a href="#"
+                                class="bg-black text-white px-3 py-1 rounded text-sm flex items-center">
+                                <i class="fab fa-apple mr-1"></i> App Store
+                            </a>
+                            <a href="#"
+                                class="bg-black text-white px-3 py-1 rounded text-sm flex items-center">
+                                <i class="fab fa-google-play mr-1"></i> Play Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Supermercado Delicioso. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Swiper -->
+    <script>
+        // Inicializar Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>
