@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS supermercado_db 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+USE supermercado_db;
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telefono VARCHAR(50) NOT NULL,
+    direccion_envio TEXT NOT NULL,
+    productos_solicitados TEXT NOT NULL,
+    notas_adicionales TEXT,
+    fecha_pedido DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+select * from pedidos;
